@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steph Herbers | Robotics Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2563eb;
+            font-weight: 400;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #4b5563;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            background: #1e3a8a;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-title {
+            color: #1e3a8a;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .project-details {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .project-details h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .project-details ul {
+            color: #4b5563;
+        }
+
+        .project-details li {
+            margin-bottom: 5px;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .video-link {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px 10px 10px 0;
+        }
+
+        .video-link:hover {
+            background: #2563eb;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .role-highlight {
+            background: #e1effe;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #2563eb;
+        }
+
+        .role-highlight strong {
+            color: #1e40af;
+        }
+
+        .role-highlight ul {
+            color: #374151;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tech-tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #93c5fd;
+        }
+
+        footer {
+            text-align: center;
+            color: #6b7280;
+            padding: 40px 0;
+            background: white;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .project-title {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Steph Herbers</h1>
+            <h2>Master's in Human-Robot Interaction</h2>
+            <p>The following projects were completed as part of my graduate coursework, showcasing the development of advanced robotic systems and human-centered design principles. These projects demonstrate technical proficiency in robotics engineering, programming, and interdisciplinary problem-solving.</p>
+        </header>
+
+        <div class="section-title">
+            Advanced Robotics Class Projects
+        </div>
+
+        <div class="projects-grid">
+            <!-- Writing Robot Arm Project -->
+            <div class="project-card">
+                <h2 class="project-title">Writing Robot Arm</h2>
+                
+                <p class="project-description">
+                    A fully custom-designed 3D robotic arm capable of precise writing and drawing operations, built from the ground up using a combination of digital fabrication techniques and traditional electronics.
+                </p>
+
+                <div class="project-details">
+                    <h3>Project Overview</h3>
+                    <p>This project involved the complete development cycle of a 3-degree-of-freedom robotic arm designed specifically for writing and drawing tasks. The system combines precision mechanics with sophisticated control algorithms to achieve smooth, accurate letter formation.</p>
+                </div>
+
+                <div class="role-highlight">
+                    <strong>Complete End-to-End Development:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>CAD design and 3D modeling of all mechanical components</li>
+                        <li>Laser cutting of precision structural elements</li>
+                        <li>3D printing of custom joints and mounting hardware</li>
+                        <li>Complete mechanical assembly and calibration</li>
+                        <li>Electrical wiring and component integration</li>
+                        <li>Programming of motion control algorithms</li>
+                    </ul>
+                </div>
+
+                <img src="images/writing-robot-arm.jpg" 
+                     alt="Writing Robot Arm - 3D robotic arm for precise writing and drawing" 
+                     class="project-image">
+
+                <div class="tech-stack">
+                    <span class="tech-tag">CAD Design</span>
+                    <span class="tech-tag">Laser Cutting</span>
+                    <span class="tech-tag">3D Printing</span>
+                    <span class="tech-tag">Servo Motors</span>
+                    <span class="tech-tag">Arduino Programming</span>
+                    <span class="tech-tag">Inverse Kinematics</span>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <a href="https://drive.google.com/file/d/1rPAn5Ylmlu6dY8sbs5Ln90wMHSJGExuT/view?usp=sharing" 
+                       target="_blank" 
+                       class="video-link">
+                        Watch Demo Video
+                    </a>
+                    <a href="https://isabellabianchi4.wixsite.com/portfolio/advanced-robotics#:~:text=here%C2%A0and-,here,-." 
+                       target="_blank" 
+                       class="video-link">
+                        Additional Footage
+                    </a>
+                    <p style="margin-top: 10px; font-style: italic; color: #6b7280;">
+                        Demonstration of precision writing and articulated movement capabilities
+                    </p>
+                </div>
+            </div>
+
+            <!-- Rough Terrain Bot Project -->
+            <div class="project-card">
+                <h2 class="project-title">Rough Terrain Bot - "Doc Ock Bot"</h2>
+                
+                <p class="project-description">
+                    Based on Mars Rover designs, this six-legged robotic system was engineered to navigate challenging, uneven terrain with remarkable stability and adaptability.
+                </p>
+
+                <div class="project-details">
+                    <h3>Project Overview</h3>
+                    <p>Developed as the culminating final project, the "Doc Ock Bot" features six articulated legs, each equipped with a DC motor at the terminus, enabling sophisticated locomotion across various terrain types. The design incorporates Mars Rover engineering principles for enhanced mobility.</p>
+                    
+                    <h3>Technical Specifications</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>6 DC Motors:</strong> Individual motor control for each wheel</li>
+                        <li><strong>High-Traction Wheels:</strong> Specialized wheels designed for rough terrain navigation</li>
+                        <li><strong>Compact Body Design:</strong> Efficient wire storage and component organization</li>
+                        <li><strong>Adaptive Legs:</strong> Legs separate for enhanced rough terrain capability</li>
+                        <li><strong>Rotation Points:</strong> Accommodate changes in terrain height</li>
+                        <li><strong>Easy-Install Wheel System:</strong> Modular design for quick maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="role-highlight">
+                    <strong>My Role & Contributions:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Complete responsibility for electrical wiring and circuit design</li>
+                        <li>Collaborative work on mechanical assembly and integration</li>
+                        <li>Programming and algorithm development for locomotion control</li>
+                        <li>Comprehensive testing and performance optimization</li>
+                    </ul>
+                </div>
+
+                <img src="images/doc-ock-bot-labeled.jpg" 
+                     alt="Doc Ock Bot - Six-legged terrain navigation robot with labeled components" 
+                     class="project-image">
+
+                <div class="tech-stack">
+                    <span class="tech-tag">DC Motors</span>
+                    <span class="tech-tag">Microcontroller Programming</span>
+                    <span class="tech-tag">Circuit Design</span>
+                    <span class="tech-tag">Mechanical Assembly</span>
+                    <span class="tech-tag">Mars Rover Design Principles</span>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <a href="https://drive.google.com/file/d/1MpScAULXlrAHDJm-5imeKsOvs5--STT2/view?usp=sharing" 
+                       target="_blank" 
+                       class="video-link">
+                        Watch Demo Video
+                    </a>
+                    <p style="margin-top: 10px; font-style: italic; color: #6b7280;">
+                        Demonstration of rough terrain navigation capabilities
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 50px;">
+            Research Publications
+        </div>
+
+        <div class="projects-grid">
+            <!-- Research Publication -->
+            <div class="project-card">
+                <h2 class="project-title">Probing a Vision-Language-Action Model for Symbolic States and Integration into a Cognitive Architecture</h2>
+                
+                <p class="project-description">
+                    Published research investigating the integration of Vision-Language-Action (VLA) models with cognitive architectures to enhance interpretability and robustness in robotic manipulation tasks.
+                </p>
+
+                <div class="project-details">
+                    <h3>Research Abstract</h3>
+                    <p>Vision-language-action (VLA) models hold promise as generalist robotics solutions by translating visual and linguistic inputs into robot actions, yet they lack reliability due to their black-box nature and sensitivity to environmental changes. This work bridges VLA models and cognitive architectures by probing OpenVLA's hidden layers to uncover symbolic representations of object properties, relations, and action states, enabling integration with a cognitive architecture for enhanced interpretability and robustness.</p>
+                    
+                    <h3>Technical Contributions</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Probing Methodology:</strong> Developed linear probes to extract symbolic states from OpenVLA's 33 hidden layers</li>
+                        <li><strong>LIBERO-Spatial Evaluation:</strong> Analyzed encoding of symbolic states across pick-and-place tasks</li>
+                        <li><strong>High Accuracy Results:</strong> Achieved >0.90 accuracy for both object and action state predictions</li>
+                        <li><strong>Real-time Integration:</strong> Demonstrated DIARC-OpenVLA system for symbolic state monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="role-highlight">
+                    <strong>My Technical Contributions:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Implemented the cognitive architecture (DIARC) integration components</li>
+                        <li>Developed the VLA interface and communication protocols</li>
+                        <li>Created the WebSocket server for real-time data streaming</li>
+                        <li>Built the React-based user interface for visualization</li>
+                        <li>Programmed the symbolic state detection and conversion systems</li>
+                        <li>Integrated probe outputs with DIARC's belief store and knowledge base</li>
+                    </ul>
+                </div>
+
+                <img src="images/diarc-vla-architecture.jpg" 
+                     alt="DIARC-VLA System Architecture showing integration between cognitive architecture and vision-language-action model" 
+                     class="project-image">
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">OpenVLA</span>
+                    <span class="tech-tag">DIARC Cognitive Architecture</span>
+                    <span class="tech-tag">WebSocket Programming</span>
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">LIBERO Simulation</span>
+                    <span class="tech-tag">Linear Probing</span>
+                    <span class="tech-tag">Symbolic AI</span>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <a href="https://arxiv.org/abs/2502.04558v1" 
+                       target="_blank" 
+                       class="video-link">
+                        Read Full Paper (arXiv)
+                    </a>
+                    <p style="margin-top: 10px; font-style: italic; color: #6b7280;">
+                        <strong>Citation:</strong> Lu, H., Li, H., Shahani, P.S., Herbers, S., & Scheutz, M. (2025). Probing a Vision-Language-Action Model for Symbolic States and Integration into a Cognitive Architecture. <em>arXiv preprint arXiv:2502.04558</em>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 50px;">
+            Probabilistic Robotics Course Projects
+        </div>
+
+        <div class="projects-grid">
+            <!-- Sim-to-Real Navigation Project -->
+            <div class="project-card">
+                <h2 class="project-title">Mapping and Navigating: Simulation vs. Real World</h2>
+                
+                <p class="project-description">
+                    Comprehensive sim-to-real transfer study investigating the challenges of deploying reinforcement learning algorithms from simulated environments to physical robotic systems, focusing on maze navigation using Q-learning with systematic noise characterization and mitigation strategies.
+                </p>
+
+                <div class="project-details">
+                    <h3>Research Problem & Approach</h3>
+                    <p>While reinforcement learning techniques show promising results in simulated environments, translating these achievements to real-world scenarios remains challenging due to unforeseeable physical factors like friction, gravity, manufacturing differences, and sensor noise. This study addresses the sim-to-real gap through parallel digital and physical experiments with systematic noise modeling.</p>
+                    
+                    <h3>Technical Implementation</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Q-Learning Algorithm:</strong> Q(s,a) ← Q(s,a) + α[r + γ max Q(s',a) - Q(s,a)]</li>
+                        <li><strong>Simulation Environment:</strong> MATLAB-based maze navigation with color-coded environments (red walls, green rewards, blue finish, yellow start)</li>
+                        <li><strong>Physical Robot:</strong> LEGO Mindstorms EV3 with two-wheeled design, color sensor, and MicroPython programming</li>
+                        <li><strong>Noise Characterization:</strong> Systematic measurement of motor noise (distance, turning, drift errors) and color sensor noise under varying lighting conditions</li>
+                    </ul>
+                </div>
+
+                <div class="role-highlight">
+                    <strong>My Technical Contributions:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Designed and implemented comprehensive noise measurement protocols for motor and sensor systems</li>
+                        <li>Developed reward function incorporating Euclidean distance, directional consistency, and oscillation prevention</li>
+                        <li>Created sim-to-real transfer pipeline translating MATLAB Q-tables to Python and subsequently to MicroPython</li>
+                        <li>Implemented three types of simulation noise: angle/distance (5-10° variation), color detection errors, and environmental distortion (-5 to +5 pixels)</li>
+                        <li>Conducted extensive physical testing across multiple scenarios with 20 trials per condition</li>
+                        <li>Built and calibrated physical maze environment with precise 4:5 robot-to-pathway width ratio</li>
+                    </ul>
+                </div>
+
+                <img src="images/simulation.png" 
+                     alt="Simulation environment showing robot navigation through maze with Q-learning algorithm" 
+                     class="project-image">
+
+                <div class="project-details">
+                    <h3>Experimental Results & Key Findings</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Noise Impact Analysis:</strong> Environmental noise yielded fewest steps with highest average score, while color sensor noise showed significant variation due to 17% red detection error rate</li>
+                        <li><strong>Physical Performance:</strong> Environmental noise incorporation improved real-world performance by 18% compared to no-noise simulation</li>
+                        <li><strong>Sensor Accuracy:</strong> Blue color detection achieved 100% accuracy in both lighting conditions, while red showed 16.6% error in dim lighting, improving to 3.33% in bright conditions</li>
+                        <li><strong>Motor Precision:</strong> Individual wheel rotation showed no deviation, but robot turning exhibited 7% error for left turns vs. 5.11% for right turns</li>
+                        <li><strong>Training Efficiency:</strong> Physical training proved impractical (200-800 seconds per episode vs. multiple episodes per second in simulation)</li>
+                    </ul>
+                </div>
+
+                <div class="project-details">
+                    <h3>Noise Characterization Categories</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Motor Noise:</strong> Distance error, wheel rotation error, turning error, battery level effects, and drift measurements</li>
+                        <li><strong>Color Sensor Noise:</strong> Ambient lighting effects (2% dim vs. 5% bright environments) with systematic error rates per color</li>
+                        <li><strong>Environmental Noise:</strong> Random spatial distortions accounting for lighting variations and wall position uncertainties</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Q-Learning</span>
+                    <span class="tech-tag">Sim-to-Real Transfer</span>
+                    <span class="tech-tag">MATLAB</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">MicroPython</span>
+                    <span class="tech-tag">LEGO Mindstorms EV3</span>
+                    <span class="tech-tag">Robotics</span>
+                    <span class="tech-tag">Noise Modeling</span>
+                    <span class="tech-tag">Sensor Fusion</span>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <p style="margin-top: 10px; font-style: italic; color: #6b7280;">
+                        <strong>Research Impact:</strong> This study demonstrates that systematic noise characterization and incorporation significantly improves sim-to-real transfer performance, with environmental noise modeling providing an 18% improvement in real-world navigation success. The work establishes practical methodologies for bridging the simulation-reality gap in autonomous navigation systems.
+                    </p>
+                    <p style="margin-top: 10px; font-style: italic; color: #6b7280;">
+                        <strong>Collaborative Team:</strong> Joint work with Isabella Bianchi, Michelle Kim, and Nathan Wang
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 50px;">
+            Convex Optimization Course Projects
+        </div>
+
+        <div class="projects-grid">
+            <!-- Semantic-Preserving Text Compression Project -->
+            <div class="project-card">
+                <h2 class="project-title">Semantic-Preserving Text Compression Using Convex Optimization</h2>
+                
+                <p class="project-description">
+                    Advanced mathematical optimization research addressing computational challenges in Large Language Models through a novel convex formulation that minimizes conversation history size while preserving essential semantic content above specified thresholds.
+                </p>
+
+                <div class="project-details">
+                    <h3>Research Problem & Motivation</h3>
+                    <p>Large Language Models face significant computational and storage challenges as conversation histories grow extensively. Traditional compression methods focus on data size reduction but fail to preserve semantic richness, often discarding contextually relevant terms and degrading LLM performance in response generation and query answering tasks.</p>
+                    
+                    <h3>Mathematical Formulation</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Objective Function:</strong> Minimize f(x) = Σxᵢ (total word count)</li>
+                        <li><strong>Constraint:</strong> Σxᵢ·sᵢ ≥ τ·Σsᵢ (semantic preservation threshold)</li>
+                        <li><strong>Decision Variables:</strong> xᵢ ∈ [0,1] representing degree of word inclusion</li>
+                        <li><strong>Semantic Weights:</strong> sᵢ = α·sᶜᵒⁿᵗᵉˣᵗ + β·sʳᵉˡᵃᵗⁱᵒⁿ + γ·sᵉⁿᵗʳᵒᵖʸ</li>
+                    </ul>
+                </div>
+
+                <div class="role-highlight">
+                    <strong>Technical Implementation & Analysis:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Reformulated non-convex binary optimization problem into convex continuous relaxation</li>
+                        <li>Implemented gradient descent with line search for efficient optimization</li>
+                        <li>Developed semantic weight calculation using contextual importance (PMI), relational importance (GloVe embeddings), and statistical rarity (entropy)</li>
+                        <li>Validated convex formulation using CVXPY solver for mathematical correctness</li>
+                        <li>Conducted comprehensive comparative analysis against non-convex CPLEX solver and greedy baseline</li>
+                        <li>Evaluated performance on Seinfeld TV show dataset (173 episodes, 600,000+ words)</li>
+                    </ul>
+                </div>
+
+                <img src="images/seinfeld-text-compression-results.png" 
+                     alt="Semantic-preserving text compression results showing original vs truncated dialogue from Seinfeld dataset" 
+                     class="project-image">
+
+                <div class="project-details">
+                    <h3>Key Research Results</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Compression Efficiency:</strong> Achieved 31% word reduction (67→46 words) while maintaining core semantic meaning with τ=0.75</li>
+                        <li><strong>Computational Performance:</strong> Convex algorithms dramatically outperformed non-convex: 0.00625s median time vs 0.0485s for gradient descent</li>
+                        <li><strong>Scalability:</strong> Convex formulations handled 1,000,000+ words efficiently while non-convex solver was limited to 1,000 words due to licensing</li>
+                        <li><strong>Consistency:</strong> Reduction rates remained stable across different script episodes, demonstrating algorithmic robustness</li>
+                        <li><strong>Semantic Preservation:</strong> Maintained conversational tone and essential information despite sacrificing some grammatical structure</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Convex Optimization</span>
+                    <span class="tech-tag">Mathematical Modeling</span>
+                    <span class="tech-tag">Gradient Descent</span>
+                    <span class="tech-tag">CVXPY</span>
+                    <span class="tech-tag">CPLEX Solver</span>
+                    <span class="tech-tag">GloVe Embeddings</span>
+                    <span class="tech-tag">Natural Language Processing</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <p style="margin-top: 10px; font-style: italic; color: #6b7280;">
+                        <strong>Research Impact:</strong> This work demonstrates how convex optimization can solve complex NLP problems more efficiently than traditional approaches, with applications in real-time systems like chatbots, virtual assistants, messaging platforms, and LLM optimization where computational efficiency and semantic preservation are critical.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 50px;">
+            Reinforcement Learning Course Projects
+        </div>
+
+        <div class="projects-grid">
+            <!-- Monte Carlo Control Project -->
+            <div class="project-card">
+                <h2 class="project-title">Monte Carlo Control for Racetrack Navigation with Probabilistic Sensing</h2>
+                
+                <p class="project-description">
+                    Advanced reinforcement learning study investigating how Monte Carlo Control methods handle navigation challenges under uncertain sensory information, demonstrating the balance between speed and safety in autonomous systems.
+                </p>
+
+                <div class="project-details">
+                    <h3>Research Overview</h3>
+                    <p>This project extended the classic racetrack problem with probabilistic sensing elements to create a realistic scenario mirroring challenges in practical autonomous systems. The study analyzed how reinforcement learning agents adapt to sensor uncertainty while maintaining performance across varying track complexities.</p>
+                    
+                    <h3>Key Research Questions</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Crash Penalty Adaptation:</strong> How does Monte Carlo Control adapt to harsh crash penalties across varying track complexities?</li>
+                        <li><strong>Sensing Impact:</strong> What impact does probabilistic sensing have on learning efficiency and trajectory optimization?</li>
+                        <li><strong>Velocity Optimization:</strong> How do optimal velocity profiles emerge differently under perfect versus imperfect sensing conditions?</li>
+                    </ul>
+                </div>
+
+                <div class="role-highlight">
+                    <strong>Technical Implementation:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Implemented Monte Carlo Control with ε-greedy exploration (ε = 0.1)</li>
+                        <li>Designed three track configurations: straight, curved (90-degree turn), and zigzag</li>
+                        <li>Integrated probabilistic sensing with 3% false positives and 3% false negatives</li>
+                        <li>Applied 10% velocity noise probability to simulate real-world conditions</li>
+                        <li>Conducted comprehensive analysis across 50,000 training episodes per experiment</li>
+                        <li>Analyzed learning dynamics across three distinct phases: exploration, stabilization, and steady-state</li>
+                    </ul>
+                </div>
+
+                <img src="images/curved-track-probabilistic-sensing.png" 
+                     alt="Curved Track - Probabilistic Sensing visualization showing racetrack navigation with Monte Carlo Control" 
+                     class="project-image">
+
+                <div class="project-details">
+                    <h3>Key Findings</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Sensing Impact:</strong> Probabilistic sensing significantly reduced success rates, with the most severe impact on the zigzag track (52.96 percentage point reduction)</li>
+                        <li><strong>Learning Efficiency:</strong> Perfect sensing enabled 5x faster convergence to optimal velocity profiles compared to probabilistic sensing</li>
+                        <li><strong>Velocity Adaptation:</strong> Agents maintained velocities far below theoretical maximum, prioritizing crash avoidance over speed</li>
+                        <li><strong>Track-Specific Strategies:</strong> Higher maximum velocities on curved tracks suggested calculated risk-taking with strategic acceleration on straight segments</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Monte Carlo Control</span>
+                    <span class="tech-tag">Reinforcement Learning</span>
+                    <span class="tech-tag">ε-Greedy Exploration</span>
+                    <span class="tech-tag">Probabilistic Sensing</span>
+                    <span class="tech-tag">Policy Optimization</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Autonomous Navigation</span>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <p style="margin-top: 10px; font-style: italic; color: #6b7280;">
+                        <strong>Research Impact:</strong> This study reveals the non-linear relationship between sensing reliability and task performance, highlighting how small imperfections in sensing can lead to disproportionately large failures in complex environments—critical insights for autonomous vehicle navigation and other high-risk applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 50px;">
+            Artificial Intelligence Course Projects
+        </div>
+
+        <div class="projects-grid">
+            <!-- Robotic Vacuum Behavior Trees -->
+            <div class="project-card">
+                <h2 class="project-title">Intelligent Robotic Vacuum with Adaptive Behavior Trees</h2>
+                
+                <p class="project-description">
+                    Enhanced robotic vacuum system implementing behavior trees with sensor-based adaptive cleaning algorithms that replace fixed-duration cleaning cycles with intelligent, completion-driven cleaning protocols.
+                </p>
+
+                <div class="project-details">
+                    <h3>Project Overview</h3>
+                    <p>Developed an advanced behavior tree system for robotic vacuum control, implementing both standard timer-based cleaning and an enhanced "Smart Mode" that uses sensor feedback for adaptive cleaning completion. The system demonstrates sophisticated state management and autonomous decision-making capabilities.</p>
+                    
+                    <h3>Smart Mode Innovation</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Sensor-Based Cleaning:</strong> Replaced fixed 20-35 second timers with adaptive cleaning until HAS_SPOT sensor confirms completion</li>
+                        <li><strong>Adaptive Algorithms:</strong> Combined separate spot cleaning tasks into unified SmartSpotCleaning system</li>
+                        <li><strong>Context Awareness:</strong> Differentiated behavior between regular spots and dusty spots with dynamic adaptation</li>
+                        <li><strong>Efficiency Improvement:</strong> Reduced cleaning cycles by 47,000x compared to standard fixed-duration approach</li>
+                    </ul>
+                </div>
+
+                <div class="role-highlight">
+                    <strong>Technical Implementation:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Designed and implemented behavior tree architecture with conditional logic</li>
+                        <li>Developed sensor feedback integration for real-time state monitoring</li>
+                        <li>Created blackboard variable system for dynamic state management</li>
+                        <li>Implemented battery management and autonomous docking protocols</li>
+                        <li>Programmed intelligent control loops with failure handling mechanisms</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Behavior Trees</span>
+                    <span class="tech-tag">Sensor Integration</span>
+                    <span class="tech-tag">State Management</span>
+                    <span class="tech-tag">Autonomous Systems</span>
+                    <span class="tech-tag">Control Algorithms</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+            </div>
+
+            <!-- Pancake Sorting Algorithm Comparison -->
+            <div class="project-card">
+                <h2 class="project-title">Advanced Search Algorithm Analysis: Pancake Sorting Optimization</h2>
+                
+                <p class="project-description">
+                    Comprehensive comparative analysis of search algorithms (A*, Uniform Cost Search, and Greedy Search) applied to the pancake sorting problem, demonstrating algorithmic efficiency trade-offs and heuristic optimization techniques.
+                </p>
+
+                <div class="project-details">
+                    <h3>Research Methodology</h3>
+                    <p>Implemented three distinct algorithmic approaches to solve the pancake sorting problem, conducting rigorous performance analysis across 25 trials to evaluate solution quality, computational efficiency, and reliability under different conditions.</p>
+                    
+                    <h3>Algorithm Implementation & Results</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>A* Search:</strong> 100% success rate, 8.9 average flips, ~0.001 seconds execution</li>
+                        <li><strong>Uniform Cost Search:</strong> 100% success rate, 8.9 average flips, ~47 seconds execution</li>
+                        <li><strong>Greedy Algorithm:</strong> 80% success rate, 10.5 average flips, ~0.001 seconds execution</li>
+                        <li><strong>Performance Optimization:</strong> A* achieved 47,000x speedup over UCS while maintaining optimality</li>
+                    </ul>
+                </div>
+
+                <div class="role-highlight">
+                    <strong>Technical Contributions:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Implemented gap heuristic function based on Helmert's landmark heuristics research</li>
+                        <li>Developed priority queue-based search algorithms with optimized state exploration</li>
+                        <li>Created comprehensive experimental framework for algorithmic performance analysis</li>
+                        <li>Designed deterministic tie-breaking mechanisms and cycle detection systems</li>
+                        <li>Analyzed admissibility and consistency properties of heuristic functions</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">A* Search</span>
+                    <span class="tech-tag">Heuristic Functions</span>
+                    <span class="tech-tag">Algorithm Analysis</span>
+                    <span class="tech-tag">Optimization</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Priority Queues</span>
+                </div>
+            </div>
+
+            <!-- Bayesian Classification -->
+            <div class="project-card">
+                <h2 class="project-title">Probabilistic Aircraft Classification using Recursive Bayesian Methods</h2>
+                
+                <p class="project-description">
+                    Sophisticated radar target classification system employing Naive Recursive Bayesian algorithms to distinguish between aircraft and birds using velocity measurements, with comprehensive noise robustness analysis.
+                </p>
+
+                <div class="project-details">
+                    <h3>Bayesian Framework Implementation</h3>
+                    <p>Developed a recursive Bayesian classifier that updates classification probabilities over time using velocity measurements. The system incorporates prediction and update steps with transition probabilities and likelihood functions for real-time target discrimination.</p>
+                    
+                    <h3>Performance & Robustness Analysis</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>Baseline Accuracy:</strong> 70% classification accuracy on clean radar data</li>
+                        <li><strong>Noise Tolerance:</strong> Maintained performance up to 1 kt noise, critical threshold at 2 kt</li>
+                        <li><strong>Robustness Floor:</strong> 60% accuracy plateau maintained even with 20 kt noise levels</li>
+                        <li><strong>Systematic Analysis:</strong> Identified bird-to-airplane classification bias through error pattern analysis</li>
+                    </ul>
+                </div>
+
+                <div class="role-highlight">
+                    <strong>Technical Implementation:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Implemented recursive Bayesian update equations with prediction and correction steps</li>
+                        <li>Developed velocity likelihood functions using scipy interpolation for smooth probability distributions</li>
+                        <li>Created transition probability matrices for temporal consistency modeling</li>
+                        <li>Designed comprehensive noise robustness testing framework with Gaussian perturbations</li>
+                        <li>Performed statistical analysis of classification confidence and error patterns</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Bayesian Methods</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Statistical Analysis</span>
+                    <span class="tech-tag">Signal Processing</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">SciPy</span>
+                    <span class="tech-tag">Noise Analysis</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Steph Herbers | Master's in Human-Robot Interaction</p>
+            <p>Advanced Robotics Course Portfolio</p>
+        </footer>
+    </div>
+</body>
+</html>
