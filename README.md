@@ -7,7 +7,7 @@
 
 stephherbers@gmail.com
 
-[Connect on LinkedIn](www.linkedin.com/in/steph-herbers)
+[Connect on LinkedIn](https://www.linkedin.com/in/steph-herbers/)
 
 ## Overview
 This portfolio showcases advanced robotics projects completed during graduate coursework, demonstrating technical proficiency in robotics engineering, artificial intelligence, and interdisciplinary problem-solving.
