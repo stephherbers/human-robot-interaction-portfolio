@@ -368,26 +368,27 @@
                 <h2 class="project-title">Image-Based Particle Filter for Drone Localization</h2>
                 
                 <p class="project-description">
-                    Particle filter implementation for aerial drone localization using dual image comparison methods. Combined histogram comparison and SIFT feature matching with dynamic spectral clustering to achieve robust localization across diverse terrain types.
+                    Particle filter implementation for aerial drone localization using combined histogram comparison and SIFT feature matching. Dynamic spectral clustering with silhouette score optimization achieved robust localization across varying terrain complexity.
                 </p>
 
                 <div class="role-highlight">
                     <strong>Technical Skills Demonstrated:</strong>
                     <ul style="margin-top: 10px; padding-left: 20px;">
-                        <li>Particle filter algorithm implementation with weighted similarity metrics</li>
-                        <li>SIFT feature detection and histogram intersection techniques</li>
+                        <li>Particle filter algorithm with weighted importance sampling and resampling</li>
+                        <li>SIFT feature detection and histogram intersection similarity metrics</li>
                         <li>Dynamic clustering using silhouette score optimization and spectral clustering</li>
-                        <li>Computer vision for aerial image comparison and localization validation</li>
+                        <li>Computer vision pipeline for aerial image comparison and drone state estimation</li>
                     </ul>
                 </div>
 
-                <img src="images/particle-filter-farmland-results.png" 
-                     alt="Particle filter localization results on farmland aerial imagery showing comparison between histogram, feature matching, and combined approaches" 
-                     class="project-image">
-
-                <img src="images/particle-filter-clustering.png" 
-                     alt="Dynamic spectral clustering visualization showing particle distribution and drone localization over time steps" 
-                     class="project-image">
+                <div class="image-row">
+                    <img src="images/particle-filter-farmland-results.png" 
+                         alt="Particle filter localization results comparing histogram vs feature matching approaches" 
+                         class="project-image">
+                    <img src="images/particle-filter-clustering.png" 
+                         alt="Dynamic spectral clustering visualization showing particle distribution over time steps" 
+                         class="project-image">
+                </div>
 
                 <div class="tech-stack">
                     <span class="tech-tag">Particle Filtering</span>
@@ -397,7 +398,7 @@
                     <span class="tech-tag">Histogram Analysis</span>
                     <span class="tech-tag">Drone Localization</span>
                     <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Image Processing</span>
+                    <span class="tech-tag">State Estimation</span>
                 </div>
             </div>
 
