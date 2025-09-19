@@ -41,6 +41,31 @@
             font-weight: 700;
         }
 
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .social-link:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
         header h2 {
             font-size: 1.5rem;
             margin-bottom: 15px;
@@ -219,6 +244,12 @@
             .container {
                 padding: 10px;
             }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -226,6 +257,16 @@
     <div class="container">
         <header>
             <h1>Steph Herbers</h1>
+            
+            <div class="social-links">
+                <a href="https://github.com/stephherbers" target="_blank" class="social-link">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/steph-herbers/" target="_blank" class="social-link">
+                    LinkedIn
+                </a>
+            </div>
+
             <h2>Master's in Human-Robot Interaction</h2>
             <h2>Tufts University</h2>
             <h3>Expected December 2025</h3>
