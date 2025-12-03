@@ -327,6 +327,73 @@
         </div>
 
         <div class="section-title" style="margin-top: 50px;">
+            Computer Vision Course Projects
+        </div>
+
+        <div class="projects-grid">
+            <!-- Automated Document Rectification Pipeline -->
+            <div class="project-card">
+                <h2 class="project-title">Automated Document Rectification Pipeline</h2>
+                
+                <p class="project-description">
+                    End-to-end computer vision pipeline for automatic document alignment and perspective correction. Implemented robust preprocessing, contour detection, and adaptive corner localization to handle varying lighting conditions and document orientations.
+                </p>
+
+                <div class="role-highlight">
+                    <strong>Technical Skills Demonstrated:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Advanced preprocessing pipeline: Gaussian blur, bilateral filtering, and Otsu's thresholding for noise reduction while preserving edge information</li>
+                        <li>Contour detection using Canny edge detection with external contour extraction, replacing initial Hough line approach due to noise sensitivity issues</li>
+                        <li>Adaptive corner localization with Ramer-Douglas-Peucker algorithm and fallback epsilon strategy ([0.01, 0.02, 0.03, 0.04, 0.05] × perimeter) to handle diverse document shapes</li>
+                        <li>Perspective transformation using OpenCV's getPerspectiveTransform for geometric correction of skewed documents</li>
+                    </ul>
+                </div>
+
+                <div style="display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <img src="images/cv_input.jpg" 
+                         alt="Input document with perspective distortion on textured background" 
+                         class="project-image" 
+                         style="width: 49% !important; margin: 0;">
+                    <img src="images/cv_output.jpg" 
+                         alt="Rectified document after automated perspective correction and alignment" 
+                         class="project-image" 
+                         style="width: 49% !important; margin: 0;">
+                </div>
+                <div class="image-caption">Before and After: Automated document rectification with perspective correction</div>
+
+                <div class="project-details">
+                    <h3>Key Parameter Optimization</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Preprocessing:</strong> Aggressive bilateral filtering (15, 150, 150) and Gaussian blur (11×11) to eliminate texture noise while preserving document edges</li>
+                        <li><strong>Edge Detection:</strong> Canny thresholds (50, 150) with 3×3 aperture for optimal edge detection across varying lighting conditions</li>
+                        <li><strong>Corner Detection:</strong> Primary epsilon of 0.02 × perimeter with adaptive fallback strategy achieved 100% success rate on synthetic dataset (vs. 14 failures with initial conservative parameters)</li>
+                    </ul>
+                </div>
+
+                <div class="project-details">
+                    <h3>Design Evolution</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Initial Approach:</strong> Hough line detection with intersection-based corner finding proved too sensitive to noise and curved edges</li>
+                        <li><strong>Final Solution:</strong> Contour-based detection with polygon approximation provided robust performance across diverse document conditions</li>
+                        <li><strong>Validation:</strong> Tested on complete synthetic dataset to ensure corner detection reliability and geometric accuracy</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Canny Edge Detection</span>
+                    <span class="tech-tag">Contour Detection</span>
+                    <span class="tech-tag">Perspective Transformation</span>
+                    <span class="tech-tag">Image Processing</span>
+                    <span class="tech-tag">Bilateral Filtering</span>
+                    <span class="tech-tag">Otsu's Thresholding</span>
+                    <span class="tech-tag">Ramer-Douglas-Peucker Algorithm</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 50px;">
             Advanced Robotics Class Projects
         </div>
 
